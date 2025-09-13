@@ -17,8 +17,37 @@ class EventManager {
     // Team B will work on this feature
     bookTicket(eventId, userInfo) {
         console.log("Booking ticket...");
-        // TODO: Implement ticket booking logic
-        return null;
+        
+        // Team B Implementation: Ticket booking logic
+        const event = this.events.find(e => e.id === eventId);
+        if (!event) {
+            throw new Error(`Event with ID ${eventId} not found`);
+        }
+        
+        if (!userInfo.name || !userInfo.email) {
+            throw new Error("User name and email are required");
+        }
+        
+        // Check if event has available capacity
+        const bookedTickets = this.tickets.filter(t => t.eventId === eventId).length;
+        if (bookedTickets >= event.capacity) {
+            throw new Error("Event is fully booked");
+        }
+        
+        const ticket = {
+            id: this.tickets.length + 1,
+            eventId: eventId,
+            eventName: event.name,
+            userName: userInfo.name,
+            userEmail: userInfo.email,
+            price: event.price,
+            bookingDate: new Date(),
+            status: 'confirmed'
+        };
+        
+        this.tickets.push(ticket);
+        console.log(`Ticket booked successfully for ${userInfo.name}. Ticket ID: ${ticket.id}`);
+        return ticket;
     }
 
     // Team C will work on this feature
