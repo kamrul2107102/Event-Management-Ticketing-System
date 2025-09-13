@@ -27,9 +27,10 @@ This is a demonstration project for learning Git workflow with multiple teams.
 - Initial code framework ✅
 
 ### In Progress Features
+
 - [ ] Event creation (Team A)
 - [ ] Ticket booking (Team B)  
-- [ ] Reporting system (Team C)
+- [x] Reporting system (Team C) ✅ - COMPLETED BY TEAM C
 
 ## Getting Started
 
