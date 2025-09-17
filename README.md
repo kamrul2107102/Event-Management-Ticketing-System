@@ -1,6 +1,7 @@
 # Event-Management-Ticketing-System
-This is our lab project
+This is our ISD lab project
 Test
+
 
 
 
